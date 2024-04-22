@@ -19,7 +19,7 @@ def create_df(dataset_name):
         traffic.set_index('date', inplace=True)
         df = traffic.iloc[:, 600:620]
         
-    elif dataset_name == 'power consumption':
+    elif dataset_name == 'power':
         file_path = './data/dataset/Dataset.xlsx'
         sheet_name = 'PublicBuilding'
         power = pd.read_excel(file_path, sheet_name=sheet_name, engine='openpyxl')
@@ -28,7 +28,7 @@ def create_df(dataset_name):
         power.index = pd.date_range(start='2023-01-01', periods=len(power), freq='15T')
         df = power
         
-    elif dataset_name == 'exchange rate':
+    elif dataset_name == 'exchange':
         exchange = pd.read_csv("./data/dataset/exchange_rate.csv")
         exchange.set_index('date', inplace=True)
         df = exchange

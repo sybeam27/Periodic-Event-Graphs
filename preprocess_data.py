@@ -89,8 +89,8 @@ def preprocess_data(dataset_name: str, bipartite: bool = True, node_feat_dim: in
     :param node_feat_dim: int, dimension of node features
     :return:
     """
-    Path("./data/processed_data/{}/".format(dataset_name)).mkdir(parents=True, exist_ok=True)
-    PATH = './data/graph/{}.csv'.format(dataset_name, dataset_name)
+    Path("./data/processed_data/{}".format(dataset_name)).mkdir(parents=True, exist_ok=True)
+    PATH = './data/graph/{}.csv'.format(dataset_name)
     OUT_DF = './data/processed_data/{}/ml_{}.csv'.format(dataset_name, dataset_name)
     OUT_FEAT = './data/processed_data/{}/ml_{}.npy'.format(dataset_name, dataset_name)
     OUT_NODE_FEAT = './data/processed_data/{}/ml_{}_node.npy'.format(dataset_name, dataset_name)
