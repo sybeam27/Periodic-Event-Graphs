@@ -89,11 +89,11 @@ def preprocess_data(dataset_name: str, bipartite: bool = True, node_feat_dim: in
     :param node_feat_dim: int, dimension of node features
     :return:
     """
-    Path("./processed_data/{}/".format(dataset_name)).mkdir(parents=True, exist_ok=True)
-    PATH = './DG_data/{}/{}.csv'.format(dataset_name, dataset_name)
-    OUT_DF = './processed_data/{}/ml_{}.csv'.format(dataset_name, dataset_name)
-    OUT_FEAT = './processed_data/{}/ml_{}.npy'.format(dataset_name, dataset_name)
-    OUT_NODE_FEAT = './processed_data/{}/ml_{}_node.npy'.format(dataset_name, dataset_name)
+    Path("./data/processed_data/{}/".format(dataset_name)).mkdir(parents=True, exist_ok=True)
+    PATH = './data/graph/{}.csv'.format(dataset_name, dataset_name)
+    OUT_DF = './data/processed_data/{}/ml_{}.csv'.format(dataset_name, dataset_name)
+    OUT_FEAT = './data/processed_data/{}/ml_{}.npy'.format(dataset_name, dataset_name)
+    OUT_NODE_FEAT = './data/processed_data/{}/ml_{}_node.npy'.format(dataset_name, dataset_name)
 
     df, edge_feats = preprocess(PATH)
     new_df = reindex(df, bipartite)
@@ -116,70 +116,11 @@ def preprocess_data(dataset_name: str, bipartite: bool = True, node_feat_dim: in
     np.save(OUT_FEAT, edge_feats)  # edge features
     np.save(OUT_NODE_FEAT, node_feats)  # node features
 
-
-def check_data(dataset_name: str):
-    """
-    check whether the processed datasets are identical to the given processed datasets
-    :param dataset_name: str, dataset name
-    :return:
-    """
-    # original data paths
-    origin_OUT_DF = './DG_data/{}/ml_{}.csv'.format(dataset_name, dataset_name)
-    origin_OUT_FEAT = './DG_data/{}/ml_{}.npy'.format(dataset_name, dataset_name)
-    origin_OUT_NODE_FEAT = './DG_data/{}/ml_{}_node.npy'.format(dataset_name, dataset_name)
-
-    # processed data paths
-    OUT_DF = './processed_data/{}/ml_{}.csv'.format(dataset_name, dataset_name)
-    OUT_FEAT = './processed_data/{}/ml_{}.npy'.format(dataset_name, dataset_name)
-    OUT_NODE_FEAT = './processed_data/{}/ml_{}_node.npy'.format(dataset_name, dataset_name)
-
-    # Load original data
-    origin_g_df = pd.read_csv(origin_OUT_DF)
-    origin_e_feat = np.load(origin_OUT_FEAT)
-    origin_n_feat = np.load(origin_OUT_NODE_FEAT)
-
-    # Load processed data
-    g_df = pd.read_csv(OUT_DF)
-    e_feat = np.load(OUT_FEAT)
-    n_feat = np.load(OUT_NODE_FEAT)
-
-    assert_frame_equal(origin_g_df, g_df)
-    # check numbers of edges and edge features
-    assert origin_e_feat.shape == e_feat.shape and origin_e_feat.max() == e_feat.max() and origin_e_feat.min() == e_feat.min()
-    # check numbers of nodes and node features
-    assert origin_n_feat.shape == n_feat.shape and origin_n_feat.max() == n_feat.max() and origin_n_feat.min() == n_feat.min()
-
-
 parser = argparse.ArgumentParser('Interface for preprocessing datasets')
-parser.add_argument('--dataset_name', type=str,
-                    choices=['wikipedia', 'reddit', 'mooc', 'lastfm', 'myket', 'enron', 'SocialEvo', 'uci',
-                             'Flights', 'CanParl', 'USLegis', 'UNtrade', 'UNvote', 'Contacts',
-                             'traffic_new_hb', 'traffic_new_p', 'traffic_new_pr', 'traffic_p', 'traffic_pr',
-                                 'exchange_new_hb', 'exchange_new_p', 'exchange_new_pr', 'exchange_p', 'exchange_pr',
-                                 'electric_new_hb', 'electric_new_p', 'electric_new_pr', 'electric_p', 'electric_pr',
-                                 'power_new_hb', 'power_new_p', 'power_new_pr', 'power_p', 'power_pr'],
-                    help='Dataset name', default='wikipedia')
+parser.add_argument('--dataset_name', type=str, required=True)
 parser.add_argument('--node_feat_dim', type=int, default=172, help='Number of node raw features')
-
 args = parser.parse_args()
 
 print(f'preprocess dataset {args.dataset_name}...')
-if args.dataset_name in ['enron', 'SocialEvo', 'uci']:
-    Path("./processed_data/{}/".format(args.dataset_name)).mkdir(parents=True, exist_ok=True)
-    copy_tree("./DG_data/{}/".format(args.dataset_name), "./processed_data/{}/".format(args.dataset_name))
-    print(f'the original dataset of {args.dataset_name} is unavailable, directly use the processed dataset by previous works.')
-else:
-    # bipartite dataset
-    if args.dataset_name in ['wikipedia', 'reddit', 'mooc', 'lastfm', 'myket', 
-                             'traffic_new_hb', 'traffic_new_p', 'traffic_new_pr', 'traffic_p', 'traffic_pr',
-                                 'exchange_new_hb', 'exchange_new_p', 'exchange_new_pr', 'exchange_p', 'exchange_pr',
-                                 'electric_new_hb', 'electric_new_p', 'electric_new_pr', 'electric_p', 'electric_pr',
-                                 'power_new_hb', 'power_new_p', 'power_new_pr', 'power_p', 'power_pr']:
-        preprocess_data(dataset_name=args.dataset_name, bipartite=True, node_feat_dim=args.node_feat_dim)
-    else:
-        preprocess_data(dataset_name=args.dataset_name, bipartite=False, node_feat_dim=args.node_feat_dim)
-    print(f'{args.dataset_name} is processed successfully.')
-
-    #if args.dataset_name not in ['myket']:
-    #    check_data(args.dataset_name)
-    #print(f'{args.dataset_name} passes the checks successfully.')
+preprocess_data(dataset_name=args.dataset_name, bipartite=False, node_feat_dim=args.node_feat_dim)
+print(f'{args.dataset_name} is processed successfully.'
