@@ -2,24 +2,33 @@
 paper : Dynamic Periodic Event Bipartite Graphs for Multivariate Time Series Pattern Prediction
 
 ## Requirements & Setup
-This code base utilize anaconda for environmental depecdencies.
-So plz download anaconda  [click here](https://www.anaconda.com/download)  
+This codebase utilizes Anaconda for managing environmental dependencies. Please follow these steps to set up the environment:
 
-Clone the repository:  
-<em>python >= 3.9</em>
-```
-git clone https://github.com/peg-repo/periodic-event-graph
-```
+1. **Download Anaconda:** [Click here](https://www.anaconda.com/download) to download Anaconda.
 
-install requirements:
-```
-cd periodic-event-graph
-conda env create -f environment.yaml
-conda activate periodic-graph  #virtual environment activate
-```
+2. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/peg-repo/periodic-event-graph
+   ```
+
+3. **Install Requirements:**
+   - Navigate to the cloned repository:
+     ```bash
+     cd periodic-event-graph
+     ```
+   - Create a Conda environment from the provided `environment.yaml` file:
+     ```bash
+     conda env create -f environment.yaml
+     ```
+   - Activate the Conda environment:
+     ```bash
+     conda activate periodic-graph
+     ```
+
+This will set up the environment required to run the codebase.
 
 ## Datasets
-The following are the information and download site link of datasets using experiments.
+Below are the details and download links for datasets used in our experiments.
 
 #### Power Consumption 
 The collection of power consumption data for a local community consisting of 50 households and 1 public building. The public building data utilized in the experiment provides consumption profiles for the public building, segmented by appliances. It spans 96 intervals per day at 15-minute intervals, offering a year's worth of data and profiles for 10 appliances. [(link)](https://zenodo.org/records/6778401)  
@@ -99,11 +108,13 @@ python train_link_prediction.py --dataset_name <dataset_name>_peg_wo_residual --
   --load_best_configs               whether to load the best configurations
 ```
 
-## Thanks
-We are thankful to the authors of
+## Special Thanks to
+We extend our gratitude to the authors of the following libraries for generously sharing their source code:
+
 [DyGLib](https://github.com/yule-BUAA/DyGLib/tree/master),
 [MASS](https://github.com/tylerwmarrs/mass-ts),
 [Peak over Threshold](https://github.com/cbhua/peak-over-threshold)
-for making their source codes publicly avaliable.
+
+Your contributions are greatly appreciated.
 
 ## Citation
