@@ -1,7 +1,22 @@
-# Periodic Event Graph
+# Dynamic Periodic Event Bipartite Graph
 paper : Dynamic Periodic Event Bipartite Graphs for Multivariate Time Series Pattern Prediction
 
-## Requirements
+## Requirements & Setup
+This code base utilize anaconda for environmental depecdencies.
+So plz download anaconda [click](https://www.anaconda.com/download)
+python >= 3.9
+
+Clone the repository:
+```
+git clone https://github.com/peg-repo/periodic-event-graph
+```
+
+install requirements:
+```
+cd periodic-event-graph
+conda env create -f environment.yaml
+conda activate periodic-graph # virtual environment activate
+```
 
 ## Datasets
 The following are the information and download site link of datasets using experiments.
