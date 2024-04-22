@@ -9,6 +9,7 @@ This codebase utilizes Anaconda for managing environmental dependencies. Please 
 1. **Download Anaconda:** [Click here](https://www.anaconda.com/download) to download Anaconda.
 
 2. **Clone the Repository:**
+Git Large File Storage (`git-lfs`) is required to download big size datasets in our repository. Clone the repository using the following command.
    ```bash
    git clone https://github.com/peg-repo/periodic-event-graph
    ```
