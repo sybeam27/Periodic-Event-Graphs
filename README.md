@@ -63,17 +63,17 @@ These commands generate periodic event graphs for different datasets with specif
 
 Replace `<dataset_name>` with one of the following options: `traffic`, `power`, `exchange`.
 
-### Periodic Event Graph without Residual Node
+#### Periodic Event Graph <em>without Residual Node</em>
 ```python
 python preprocess_data.py --dataset_name <dataset_name>_peg_wo_residual
 ```
 
-### Periodic Event Graph with Residual Node
+#### Periodic Event Graph <em>with Residual Node</em>
 ```python
 python preprocess_data.py --dataset_name <dataset_name>_peg_w_residual
 ```
 
-### Periodic Event Graph with Simple Residual Node
+#### Periodic Event Graph <em>with Simple Residual Node</em>
 ```python
 python preprocess_data.py --dataset_name <dataset_name>_peg_w_simple_residual
 ```
