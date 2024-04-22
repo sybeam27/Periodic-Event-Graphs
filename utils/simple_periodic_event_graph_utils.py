@@ -1,5 +1,5 @@
 # functions
-def speg_extract_residual_windows_df(window_df, event_set, pattern_matching_df):
+def extract_residual_windows_df(window_df, event_set, pattern_matching_df):
     residual_windows_df = pd.DataFrame(index = window_df.index, columns =  window_df.columns)
 
     for col_name in residual_windows_df.columns:
@@ -17,7 +17,7 @@ def speg_extract_residual_windows_df(window_df, event_set, pattern_matching_df):
 
     return residual_windows_df
 
-def speg_extract_threshold_windows_df(df, data_dict, size, stride, init_level = 0.8):
+def extract_threshold_windows_df(df, data_dict, size, stride, init_level = 0.8):
     threshold_df = pd.DataFrame(index = df.index, columns = df.columns)
 
     for col_name in df.columns:
@@ -42,7 +42,7 @@ def speg_extract_threshold_windows_df(df, data_dict, size, stride, init_level = 
         
     return threshold_windows_df
 
-def speg_residual_matching_df(residual_window_df, threshold_window_df):
+def residual_matching_df(residual_window_df, threshold_window_df):
     residual_matching_df = pd.DataFrame(index = residual_window_df.index, columns =  residual_window_df.columns)
 
     for col_name in residual_matching_df.columns:
@@ -68,7 +68,7 @@ def speg_residual_matching_df(residual_window_df, threshold_window_df):
     
     return residual_matching_df
     
-def speg_event2graph_df(pattern_df, residual_df, evnet_set):
+def event2graph_df(pattern_df, residual_df, evnet_set):
     time_series_node = list(pattern_df.columns)
     event_node = list(evnet_set.keys()) + ['Residual +', 'Residual -']  # residual error event node
     
