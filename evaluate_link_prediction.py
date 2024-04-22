@@ -7,13 +7,13 @@ import warnings
 import json
 import torch.nn as nn
 
-from models.TGAT import TGAT
-from models.MemoryModel import MemoryModel, compute_src_dst_node_time_shifts
-from models.CAWN import CAWN
-from models.TCL import TCL
-from models.GraphMixer import GraphMixer
-from models.DyGFormer import DyGFormer
-from models.modules import MergeLayer
+from dgnn_models.TGAT import TGAT
+from dgnn_models.MemoryModel import MemoryModel, compute_src_dst_node_time_shifts
+from dgnn_models.CAWN import CAWN
+from dgnn_models.TCL import TCL
+from dgnn_models.GraphMixer import GraphMixer
+from dgnn_models.DyGFormer import DyGFormer
+from dgnn_models.modules import MergeLayer
 from utils.utils import set_random_seed, convert_to_gpu, get_parameter_sizes
 from utils.utils import get_neighbor_sampler, NegativeEdgeSampler
 from evaluate_models_utils import evaluate_model_link_prediction, evaluate_edge_bank_link_prediction
