@@ -1,6 +1,6 @@
 import sys
-sys.path.append('./lib/peak-over-threshold/src/')
-sys.path.append('./lib/mass-ts/')         
+sys.path.append('./lib/pot/src/')
+sys.path.append('./lib/mass/')         
 sys.path.append('./lib/DyGLib/')
 
 import pandas as pd
