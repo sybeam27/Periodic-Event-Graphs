@@ -16,7 +16,7 @@ from spot_sy import spot_sy
 from mass_ts._mass_ts_sy import mass2 as mass2_sy
 
 
-def peg_matrix_profile_set(data_dict, dict, top_k, periods):
+def matrix_profile_set(data_dict, dict, top_k, periods):
     profiles_set = {}
     
     for col_name in data_dict.keys():
@@ -44,7 +44,7 @@ def dtw_distance_matrix(time_series_list):
             
     return distance_matrix
 
-def peg_event_generation_set(data_dict, mp_set, dict, periods, cluster_size):
+def event_generation_set(data_dict, mp_set, dict, periods, cluster_size):
     # 패딩하여 2차원 배열 생성
     motifs = {}
     for col_name in data_dict.keys():
@@ -80,7 +80,7 @@ def peg_event_generation_set(data_dict, mp_set, dict, periods, cluster_size):
 
     return events_set
 
-def peg_extract_windows_df(df, data_dict, dict, periods, stride, size):
+def extract_windows_df(df, data_dict, dict, periods, stride, size):
     num_windows = (len(df) - size) // stride + 1
     range_windows = range(0, num_windows * stride, stride)
     windows_df = pd.DataFrame(index=range_windows, columns=df.columns)
@@ -97,7 +97,7 @@ def peg_extract_windows_df(df, data_dict, dict, periods, stride, size):
     return windows_df
 
 
-def peg_pattern_matching_df(window_df, event_set):
+def pattern_matching_df(window_df, event_set):
     similarity_tensor = {}
     
     for i in window_df.index:
@@ -131,7 +131,7 @@ def peg_pattern_matching_df(window_df, event_set):
 
     return event_matching_df
 
-def peg_event2graph_df(pattern_df, residual_df, pattrn_event_set, residual_event_set):
+def event2graph_df(pattern_df, residual_df, pattrn_event_set, residual_event_set):
     pattern_mapping = {event: idx for idx, event in enumerate(list(pattrn_event_set.keys()))}
     residual_mapping = {event: idx + len(pattrn_event_set.keys()) for idx, event in enumerate(list(residual_event_set.keys()))}
     timeseries_mapping = {time_series: idx for idx, time_series in enumerate(list(pattern_df.columns))}
@@ -224,7 +224,7 @@ def fft_estimate_period(data):
     else:
         return None 
 
-def peg_dominant_periods(dict):
+def dominant_periods(dict):
     periods_dict = {}
     for col, data in dict.items():
         period_length = fft_estimate_period(data)
