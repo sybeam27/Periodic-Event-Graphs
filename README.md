@@ -1,5 +1,5 @@
 # Periodic Event Graph
-paper : Dynamic Periodic Event Bipartite Graph
+paper : Dynamic Periodic Event Bipartite Graphs for Multivariate Time Series Pattern Prediction
 
 ## Requirements
 
@@ -28,12 +28,19 @@ The collection of the daily exchange rates of eight foreign countries including 
 
 ## Preprocessing
 
+### periodic event graph <em>with residual node</em>
 ```python
-# periodic event graph with residual node
+# power consumption
 python preprocess_data.py --dataset_name power_peg_w_residual
-# periodic event graph without residual node
+```
+### periodic event graph <em>without residual node</em>
+```python
+# power consumption
 python preprocess_data.py --dataset_name power_peg_wo_residual
-# periodic event graph with simple residual node
+```
+### periodic event graph <em>with simple residual node</em>
+```python
+# power consumption
 python preprocess_data.py --dataset_name power_peg_w_simple_residual
 ```
 
