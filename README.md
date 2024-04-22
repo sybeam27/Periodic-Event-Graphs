@@ -1,5 +1,6 @@
 # Dynamic Periodic Event Bipartite Graph
 paper : Dynamic Periodic Event Bipartite Graphs for Multivariate Time Series Pattern Prediction
+![Construction process of Dynamic Periodic Bipartite Graph](./figures/figure_methodology.jpg)
 
 ## Requirements & Setup
 This codebase utilizes Anaconda for managing environmental dependencies. Please follow these steps to set up the environment:
