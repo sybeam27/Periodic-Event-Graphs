@@ -3,7 +3,6 @@ import sys
 import random
 import warnings
 import argparse
-
 import pandas as pd
 import numpy as np
 import utils.periodic_event_graph_utils as peg

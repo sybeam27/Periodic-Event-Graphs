@@ -1,7 +1,7 @@
 import logging
 import time
-import sys
 import os
+import sys
 from tqdm import tqdm
 import numpy as np
 import warnings

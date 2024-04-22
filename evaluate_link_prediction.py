@@ -6,7 +6,6 @@ import numpy as np
 import warnings
 import json
 import torch.nn as nn
-
 from dgnn_models.TGAT import TGAT
 from dgnn_models.MemoryModel import MemoryModel, compute_src_dst_node_time_shifts
 from dgnn_models.CAWN import CAWN

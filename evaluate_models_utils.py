@@ -5,9 +5,9 @@ from tqdm import tqdm
 import numpy as np
 import logging
 import time
-import argparse
 import os
 import json
+import argparse
 
 from dgnn_models.EdgeBank import edge_bank_link_prediction
 from utils.metrics import get_link_prediction_metrics, get_node_classification_metrics
