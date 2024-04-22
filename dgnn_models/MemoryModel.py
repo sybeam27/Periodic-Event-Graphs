@@ -4,7 +4,7 @@ import torch.nn as nn
 from collections import defaultdict
 
 from utils.utils import NeighborSampler
-from models.modules import TimeEncoder, MergeLayer, MultiHeadAttention
+from dgnn_models.modules import TimeEncoder, MergeLayer, MultiHeadAttention
 
 
 class MemoryModel(torch.nn.Module):

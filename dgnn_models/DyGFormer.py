@@ -4,7 +4,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torch.nn import MultiheadAttention
 
-from models.modules import TimeEncoder
+from dgnn_models.modules import TimeEncoder
 from utils.utils import NeighborSampler
 
 

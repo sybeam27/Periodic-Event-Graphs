@@ -2,7 +2,7 @@ import numpy as np
 import torch
 import torch.nn as nn
 
-from models.modules import TimeEncoder, MergeLayer, MultiHeadAttention
+from dgnn_models.modules import TimeEncoder, MergeLayer, MultiHeadAttention
 from utils.utils import NeighborSampler
 
 

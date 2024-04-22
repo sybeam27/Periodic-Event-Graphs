@@ -106,7 +106,7 @@ class MultiHeadAttention(nn.Module):
         :param edge_feat_dim: int, dimension of edge features
         :param time_feat_dim: int, dimension of time features (time encodings)
         :param num_heads: int, number of attention heads
-        :param dropout: float, dropout rate
+        :param dropout: float, ropout rate
         """
         super(MultiHeadAttention, self).__init__()
 

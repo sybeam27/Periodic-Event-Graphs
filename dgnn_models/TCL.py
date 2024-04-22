@@ -2,7 +2,7 @@ import numpy as np
 import torch
 import torch.nn as nn
 
-from models.modules import TimeEncoder, TransformerEncoder
+from dgnn_models.modules import TimeEncoder, TransformerEncoder
 from utils.utils import NeighborSampler
 
 
