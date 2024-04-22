@@ -43,15 +43,15 @@ The collection of the daily exchange rates of eight foreign countries including 
 
 ## Preprocessing
 `<dataset_name>` is one of `traffic`, `power`, `exchange`
-* periodic event graph <em>with residual node</em>
+* periodic event graph **<em>with residual node</em>**
 ```python
 python preprocess_data.py --dataset_name <dataset_name>_peg_w_residual
 ```
-* periodic event graph <em>without residual node</em>
+* periodic event graph **<em>without residual node</em>**
 ```python
 python preprocess_data.py --dataset_name <dataset_name>_peg_wo_residual
 ```
-* periodic event graph <em>with simple residual node</em>
+* periodic event graph **<em>with simple residual node</em>**
 ```python
 python preprocess_data.py --dataset_name <dataset_name>_peg_w_simple_residual
 ```
