@@ -28,51 +28,68 @@ This codebase utilizes Anaconda for managing environmental dependencies. Please 
 This will set up the environment required to run the codebase.
 
 ## Datasets
-Below are the details and download links for datasets used in our experiments.
+Below are the details and download links for datasets used in our experiments:
 
-#### Power Consumption 
-The collection of power consumption data for a local community consisting of 50 households and 1 public building. The public building data utilized in the experiment provides consumption profiles for the public building, segmented by appliances. It spans 96 intervals per day at 15-minute intervals, offering a year's worth of data and profiles for 10 appliances. [(link)](https://zenodo.org/records/6778401)  
+### Power Consumption 
+This dataset consists of power consumption data for a local community comprising 50 households and 1 public building. The public building data used in the experiment provides consumption profiles for the building, categorized by appliances. It covers 96 intervals per day at 15-minute intervals, offering a year's worth of data and profiles for 10 appliances. [(Download)](https://zenodo.org/records/6778401)
 
-#### Traffic 
-The collection of 48 months (2015-2016) hourly data from the California Department of Transportation. The data describes the road occupancy rates (between 0 and 1) measured by different sensors on San Francisco Bay area freeways. [(link)](https://pems.dot.ca.gov)  
+### Traffic 
+This dataset contains 48 months (2015-2016) of hourly data from the California Department of Transportation. It describes road occupancy rates (ranging between 0 and 1) measured by various sensors on San Francisco Bay area freeways. [(Download)](https://pems.dot.ca.gov)
 
-#### Exchange Rate   
-The collection of the daily exchange rates of eight foreign countries including Australia, British, Canada, Switzerland, China, Japan, New Zealand and Singapore ranging from 1990 to 2016. [(link)](https://github.com/MTS-BenchMark/MvTS?tab=readme-ov-file)
+### Exchange Rate   
+This dataset includes daily exchange rates of eight foreign countries: Australia, Britain, Canada, Switzerland, China, Japan, New Zealand, and Singapore, spanning from 1990 to 2016. [(Download)](https://github.com/MTS-BenchMark/MvTS?tab=readme-ov-file)
+
+These datasets provide valuable resources for our experiments.
 
 ## Periodic Event Graph Generation
-`--period` is for STL algorithm
+The `--period` parameter is used for STL algorithm.
 
 ```python
-# power consumption
+# Power consumption
 !python graph_generation.py --dataset_name 'power' --period 4 --motif 5 --cluster 2
-# exchange rate
+
+# Exchange rate
 !python graph_generation.py --dataset_name 'exchange' --period 4 --motif 3 --cluster 2
-# traffic
+
+# Traffic
 !python graph_generation.py --dataset_name 'traffic' --period 4 --motif 3 --cluster 3
 ```
 
-## Preprocessing
-`<dataset_name>` is one of `traffic`, `power`, `exchange`
+These commands generate periodic event graphs for different datasets with specified parameters.
 
-* periodic event graph **<em>without residual node</em>**
+## Preprocessing
+
+Replace `<dataset_name>` with one of the following options: `traffic`, `power`, `exchange`.
+
+### Periodic Event Graph without Residual Node
 ```python
 python preprocess_data.py --dataset_name <dataset_name>_peg_wo_residual
 ```
-* periodic event graph **<em>with residual node</em>**
+
+### Periodic Event Graph with Residual Node
 ```python
 python preprocess_data.py --dataset_name <dataset_name>_peg_w_residual
 ```
-* periodic event graph **<em>with simple residual node</em>**
+
+### Periodic Event Graph with Simple Residual Node
 ```python
 python preprocess_data.py --dataset_name <dataset_name>_peg_w_simple_residual
 ```
 
+These commands preprocess the data for the specified dataset, generating periodic event graphs with or without residual nodes as required.
+
 ## Dynamic GNNs Link Prediction
-`<dataset_name>` is one of `traffic`, `power`, `exchange`    
-and `<dgnn_model>` is one of `JODIE`, `DyRep`, `TGAT`, `TGN`, `GraphMixer`
+
+Replace `<dataset_name>` with one of the following options: `traffic`, `power`, `exchange`.
+Replace `<dgnn_model>` with one of the following options: `JODIE`, `DyRep`, `TGAT`, `TGN`, `GraphMixer`.
+
 ```python
 python train_link_prediction.py --dataset_name <dataset_name>_peg_wo_residual --model_name <dgnn_model> --load_best_configs --num_runs 5 --num_epochs 10
 ```
+
+This command trains a dynamic graph neural network for link prediction on the specified dataset using the selected model, with best configurations loaded, running 5 trials for 10 epochs each.
+
+
 #### Optional arguments
 ```
   --dataset_name                    dataset to be used
