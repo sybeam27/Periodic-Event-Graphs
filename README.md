@@ -35,11 +35,11 @@ The collection of the daily exchange rates of eight foreign countries including 
 
 ```python
 # power consumption
-!python graph_generation.py --dataset_name 'power' --period 4 --stride 4 --motif 5 --cluster 2
+!python graph_generation.py --dataset_name 'power' --period 4 --motif 5 --cluster 2
 # exchange rate
-!python graph_generation.py --dataset_name 'exchange' --period 4 --stride 4 --motif 3 --cluster 2
+!python graph_generation.py --dataset_name 'exchange' --period 4 --motif 3 --cluster 2
 # traffic
-!python graph_generation.py --dataset_name 'traffic' --period 4 --stride 4 --motif 3 --cluster 3
+!python graph_generation.py --dataset_name 'traffic' --period 4 --motif 3 --cluster 3
 ```
 
 ## Preprocessing
@@ -66,67 +66,37 @@ python train_link_prediction.py --dataset_name <dataset_name>_peg_wo_residual --
 ```
 #### Optional arguments
 ```
-  --dataset_name DATASET_NAME
-                        dataset to be used
-  --batch_size BATCH_SIZE
-                        batch size
-  --model_name {JODIE,DyRep,TGAT,TGN,CAWN,EdgeBank,TCL,GraphMixer,DyGFormer}
-                        name of the model, note that EdgeBank is only applicable
-                        for evaluation
-  --gpu GPU             number of gpu to use
-  --num_neighbors NUM_NEIGHBORS
-                        number of neighbors to sample for each node
-  --sample_neighbor_strategy {uniform,recent,time_interval_aware}
-                        how to sample historical neighbors
-  --time_scaling_factor TIME_SCALING_FACTOR
-                        the hyperparameter that controls the sampling preference
-                        with time interval, a large time_scaling_factor tends to
-                        sample more on recent links, 0.0 corresponds to uniform
-                        sampling, it works when sample_neighbor_strategy ==
-                        time_interval_aware
-  --num_walk_heads NUM_WALK_HEADS
-                        number of heads used for the attention in walk encoder
-  --num_heads NUM_HEADS
-                        number of heads used in attention layer
-  --num_layers NUM_LAYERS
-                        number of model layers
-  --walk_length WALK_LENGTH
-                        length of each random walk
-  --time_gap TIME_GAP   time gap for neighbors to compute node features
-  --time_feat_dim TIME_FEAT_DIM
-                        dimension of the time embedding
-  --position_feat_dim POSITION_FEAT_DIM
-                        dimension of the position embedding
-  --edge_bank_memory_mode {unlimited_memory,time_window_memory,repeat_threshold_memory}
-                        how memory of EdgeBank works
-  --time_window_mode {fixed_proportion,repeat_interval}
-                        how to select the time window size for time window memory
-  --patch_size PATCH_SIZE
-                        patch size
-  --channel_embedding_dim CHANNEL_EMBEDDING_DIM
-                        dimension of each channel embedding
-  --max_input_sequence_length MAX_INPUT_SEQUENCE_LENGTH
-                        maximal length of the input sequence of each node
-  --learning_rate LEARNING_RATE
-                        learning rate
-  --dropout DROPOUT     dropout rate
-  --num_epochs NUM_EPOCHS
-                        number of epochs
-  --optimizer {SGD,Adam,RMSprop}
-                        name of optimizer
-  --weight_decay WEIGHT_DECAY
-                        weight decay
-  --patience PATIENCE   patience for early stopping
-  --val_ratio VAL_RATIO
-                        ratio of validation set
-  --test_ratio TEST_RATIO
-                        ratio of test set
-  --num_runs NUM_RUNS   number of runs
-  --test_interval_epochs TEST_INTERVAL_EPOCHS
-                        how many epochs to perform testing once
-  --negative_sample_strategy {random,historical,inductive}
-                        strategy for the negative edge sampling
-  --load_best_configs   whether to load the best configurations
+  --dataset_name                    dataset to be used
+  --batch_size                      batch size
+  --model_name                      name of the model, note that EdgeBank is only applicable for evaluation
+  --gpu GPU                         number of gpu to use
+  --num_neighbors                   number of neighbors to sample for each node
+  --sample_neighbor_strategy        how to sample historical neighbors
+  --time_scaling_factor             the hyperparameter that controls the sampling preference with time interval, a large time_scaling_factor tends to sample more on recent links, 0.0 corresponds to uniform sampling, it works when sample_neighbor_strategy == time_interval_aware
+  --num_walk_heads                  number of heads used for the attention in walk encoder
+  --num_heads                       number of heads used in attention layer
+  --num_layers                      number of model layers
+  --walk_length                     length of each random walk
+  --time_gap                        time gap for neighbors to compute node features
+  --time_feat_dim                   dimension of the time embedding
+  --position_feat_dim               dimension of the position embedding
+  --edge_bank_memory_mode           how memory of EdgeBank works
+  --time_window_mode                how to select the time window size for time window memory
+  --patch_size                      patch size
+  --channel_embedding_dim           dimension of each channel embedding
+  --max_input_sequence_length       maximal length of the input sequence of each node
+  --learning_rate                   learning rate
+  --dropout                         dropout rate
+  --num_epochs                      number of epochs
+  --optimizer                       name of optimizer
+  --weight_decay                    weight decay
+  --patience                        patience for early stopping
+  --val_ratio                       ratio of validation set
+  --test_ratio                      ratio of test set
+  --num_runs                        number of runs
+  --test_interval_epochs            how many epochs to perform testing once
+  --negative_sample_strategy        strategy for the negative edge sampling
+  --load_best_configs               whether to load the best configurations
 ```
 
 ## Thanks
