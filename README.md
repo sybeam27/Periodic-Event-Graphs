@@ -1,11 +1,9 @@
 # Dynamic Periodic Event Bipartite Graph
 paper : Dynamic Periodic Event Bipartite Graphs for Multivariate Time Series Pattern Prediction  
 
-![methodology](./figures/figure_methodology.jpg)
-
 <figure>
   <img src="./figures/figure_methodology.jpg" alt="Construction process of Dynamic Periodic Bipartite Graph">
-  <figcaption>Construction process of Dynamic Periodic Bipartite Graph</figcaption>
+  <figcaption style="text-align:center;">[Figure] Construction process of Dynamic Periodic Bipartite Graph</figcaption>
 </figure>
 
 
