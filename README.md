@@ -1,6 +1,13 @@
 # Dynamic Periodic Event Bipartite Graph
-paper : Dynamic Periodic Event Bipartite Graphs for Multivariate Time Series Pattern Prediction
-![Construction process of Dynamic Periodic Bipartite Graph](./figures/figure_methodology.jpg)
+paper : Dynamic Periodic Event Bipartite Graphs for Multivariate Time Series Pattern Prediction  
+
+![methodology](./figures/figure_methodology.jpg)
+
+<figure>
+  <img src="./figures/figure_methodology.jpg" alt="Construction process of Dynamic Periodic Bipartite Graph">
+  <figcaption>Construction process of Dynamic Periodic Bipartite Graph</figcaption>
+</figure>
+
 
 ## Requirements & Setup
 This codebase utilizes Anaconda for managing environmental dependencies. Please follow these steps to set up the environment:
@@ -47,13 +54,13 @@ The `--period` parameter is used for STL algorithm.
 
 ```python
 # Power consumption
-!python graph_generation.py --dataset_name 'power' --period 4 --motif 5 --cluster 2
+python graph_generation.py --dataset_name 'power' --period 4 --motif 5 --cluster 2
 
 # Exchange rate
-!python graph_generation.py --dataset_name 'exchange' --period 4 --motif 3 --cluster 2
+python graph_generation.py --dataset_name 'exchange' --period 4 --motif 3 --cluster 2
 
 # Traffic
-!python graph_generation.py --dataset_name 'traffic' --period 4 --motif 3 --cluster 3
+python graph_generation.py --dataset_name 'traffic' --period 4 --motif 3 --cluster 3
 ```
 
 These commands generate periodic event graphs for different datasets with specified parameters.
