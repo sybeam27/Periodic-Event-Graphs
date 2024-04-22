@@ -57,7 +57,8 @@ python preprocess_data.py --dataset_name <dataset_name>_peg_w_simple_residual
 ```
 
 ## Dynamic GNNs Link Prediction
-`<dataset_name>` is one of `traffic`, `power`, `exchange` and `<dgnn_model>` is one of `JODIE`, `DyRep`, `TGAT`, `TGN`, `GraphMixer`
+`<dataset_name>` is one of `traffic`, `power`, `exchange`    
+and `<dgnn_model>` is one of `JODIE`, `DyRep`, `TGAT`, `TGN`, `GraphMixer`
 ```python
 python train_link_prediction.py --dataset_name <dataset_name>_peg_wo_residual --model_name <dgnn_model> --load_best_configs --num_runs 5 --num_epochs 10
 ```
@@ -128,8 +129,8 @@ python train_link_prediction.py --dataset_name <dataset_name>_peg_wo_residual --
 
 ## Thanks
 We are thankful to the authors of
-[DyGLib](https://github.com/yule-BUAA/DyGLib/tree/master)
-[MASS](https://github.com/tylerwmarrs/mass-ts)
+[DyGLib](https://github.com/yule-BUAA/DyGLib/tree/master),
+[MASS](https://github.com/tylerwmarrs/mass-ts),
 [Peak over Threshold](https://github.com/cbhua/peak-over-threshold)
 for making their source codes publicly avaliable.
 
