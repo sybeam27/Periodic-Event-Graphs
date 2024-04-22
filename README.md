@@ -31,7 +31,7 @@ The collection of 48 months (2015-2016) hourly data from the California Departme
 The collection of the daily exchange rates of eight foreign countries including Australia, British, Canada, Switzerland, China, Japan, New Zealand and Singapore ranging from 1990 to 2016. [(link)](https://github.com/MTS-BenchMark/MvTS?tab=readme-ov-file)
 
 ## Periodic Event Graph Generation
-``--period`` is for STL algorithm
+`--period` is for STL algorithm
 
 ```python
 # power consumption
