@@ -128,11 +128,12 @@ This command trains a dynamic graph neural network for link prediction on the sp
 ```
 
 ## Special Thanks to
-We extend our gratitude to the authors of the following libraries for generously sharing their source code:
+We extend our gratitude to the authors of the following libraries for generously sharing their source code and dataset:
 
 [DyGLib](https://github.com/yule-BUAA/DyGLib/tree/master),
 [MASS](https://github.com/tylerwmarrs/mass-ts),
-[Peak over Threshold](https://github.com/cbhua/peak-over-threshold)
+[Peak over Threshold](https://github.com/cbhua/peak-over-threshold),
+[MvTS](https://github.com/MTS-BenchMark/MvTS?tab=readme-ov-file)
 
 Your contributions are greatly appreciated.
 
