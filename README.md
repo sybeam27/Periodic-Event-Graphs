@@ -3,10 +3,10 @@ paper : Dynamic Periodic Event Bipartite Graphs for Multivariate Time Series Pat
 
 ## Requirements & Setup
 This code base utilize anaconda for environmental depecdencies.
-So plz download anaconda [click](https://www.anaconda.com/download)  
+So plz download anaconda  [click here](https://www.anaconda.com/download)  
 
 Clone the repository:  
-python >= 3.9
+<em>python >= 3.9</em>
 ```
 git clone https://github.com/peg-repo/periodic-event-graph
 ```
