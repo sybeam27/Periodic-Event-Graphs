@@ -10,20 +10,20 @@ import json
 import torch
 import torch.nn as nn
 
-from models.TGAT import TGAT
-from models.MemoryModel import MemoryModel, compute_src_dst_node_time_shifts
-from models.CAWN import CAWN
-from models.TCL import TCL
-from models.GraphMixer import GraphMixer
-from models.DyGFormer import DyGFormer
-from models.modules import MergeLayer
-from utils.utils import set_random_seed, convert_to_gpu, get_parameter_sizes, create_optimizer
-from utils.utils import get_neighbor_sampler, NegativeEdgeSampler
-from evaluate_models_utils import evaluate_model_link_prediction
-from utils.metrics import get_link_prediction_metrics
-from utils.DataLoader import get_idx_data_loader, get_link_prediction_data
-from utils.EarlyStopping import EarlyStopping
-from utils.load_configs import get_link_prediction_args
+from lib.DyGLib.models.TGAT import TGAT
+from lib.DyGLib.models.MemoryModel import MemoryModel, compute_src_dst_node_time_shifts
+from lib.DyGLib.models.CAWN import CAWN
+from lib.DyGLib.models.TCL import TCL
+from lib.DyGLib.models.GraphMixer import GraphMixer
+from lib.DyGLib.models.DyGFormer import DyGFormer
+from lib.DyGLib.models.modules import MergeLayer
+from lib.DyGLib.utils.utils import set_random_seed, convert_to_gpu, get_parameter_sizes, create_optimizer
+from lib.DyGLib.utils.utils import get_neighbor_sampler, NegativeEdgeSampler
+from lib.DyGLib.evaluate_models_utils import evaluate_model_link_prediction
+from lib.DyGLib.utils.metrics import get_link_prediction_metrics
+from lib.DyGLib.utils.DataLoader import get_idx_data_loader, get_link_prediction_data
+from lib.DyGLib.utils.EarlyStopping import EarlyStopping
+from lib.DyGLib.utils.load_configs import get_link_prediction_args
 
 if __name__ == "__main__":
 

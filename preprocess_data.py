@@ -123,4 +123,4 @@ args = parser.parse_args()
 
 print(f'preprocess dataset {args.dataset_name}...')
 preprocess_data(dataset_name=args.dataset_name, bipartite=False, node_feat_dim=args.node_feat_dim)
-print(f'{args.dataset_name} is processed successfully.'
+print(f'{args.dataset_name} is processed successfully.')
