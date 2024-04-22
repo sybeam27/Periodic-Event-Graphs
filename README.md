@@ -31,6 +31,7 @@ The collection of 48 months (2015-2016) hourly data from the California Departme
 The collection of the daily exchange rates of eight foreign countries including Australia, British, Canada, Switzerland, China, Japan, New Zealand and Singapore ranging from 1990 to 2016. [(link)](https://github.com/MTS-BenchMark/MvTS?tab=readme-ov-file)
 
 ## Periodic Event Graph Generation
+``--period`` is for STL algorithm
 
 ```python
 # power consumption
@@ -43,13 +44,14 @@ The collection of the daily exchange rates of eight foreign countries including 
 
 ## Preprocessing
 `<dataset_name>` is one of `traffic`, `power`, `exchange`
-* periodic event graph **<em>with residual node</em>**
-```python
-python preprocess_data.py --dataset_name <dataset_name>_peg_w_residual
-```
+
 * periodic event graph **<em>without residual node</em>**
 ```python
 python preprocess_data.py --dataset_name <dataset_name>_peg_wo_residual
+```
+* periodic event graph **<em>with residual node</em>**
+```python
+python preprocess_data.py --dataset_name <dataset_name>_peg_w_residual
 ```
 * periodic event graph **<em>with simple residual node</em>**
 ```python
