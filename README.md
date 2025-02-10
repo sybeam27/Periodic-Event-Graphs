@@ -1,5 +1,6 @@
 # Dynamic Periodic Event Bipartite Graph
 paper : Dynamic Periodic Event Bipartite Graphs for Multivariate Time Series Pattern Prediction  
+repo : https://github.com/peg-repo/periodic-event-graph
 
 ![methodology](./figures/figure_methodology.jpg)
 
