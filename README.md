@@ -139,6 +139,7 @@ We extend our gratitude to the authors of the following libraries for generously
 Your contributions are greatly appreciated.
 
 ## Citation
+```python
 @article{park2025dynamic,
   title={Dynamic Periodic Event Graphs for multivariate time series pattern prediction},
   author={Park, SoYoung and Lee, HyeWon and Lim, Sungsu},
@@ -148,3 +149,4 @@ Your contributions are greatly appreciated.
   year={2025},
   publisher={PeerJ Inc.}
 }
+```
